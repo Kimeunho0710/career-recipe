@@ -126,7 +126,7 @@ function MajorSelectPage() {
         ) : (
           subjects.map((subject, index) => (
             <div className="SubjectItem" key={index}>
-              <div className="SubjectInfo">{subject.subjectName}</div>
+              <div className="SubjectInfo">{subject.subject_name}</div>
               <div className="Star" onClick={() => toggleFavorite(index)}>
                 <img
                   src={favorites[index] ? '/star_full.png' : '/star.png'}
