@@ -20,10 +20,10 @@ function MajorSelectPage() {
 
   const departments = [
     '전체',
-    '컴퓨터SW학과',
-    '미디어SW학과',
-    '정보통신학과',
-    '정보보호학과',
+    '컴퓨터SW',
+    '미디어SW',
+    '정보통신',
+    '정보보호',
     '데이터과학부',
   ];
 
@@ -33,7 +33,7 @@ function MajorSelectPage() {
   useEffect(() => {
     if (!jobId) return;
 
-    const department = selectedDept === '전체' ? '' : selectedDept.replace(/학과|학부/, '');
+    const department = selectedDept === '전체' ? '' : selectedDept;
     const grade = selectedGrade === '전체' ? '' : parseInt(selectedGrade.charAt(0));
     const semester_id = selectedSemester === '전체' ? '' : parseInt(selectedSemester.charAt(0));
 
