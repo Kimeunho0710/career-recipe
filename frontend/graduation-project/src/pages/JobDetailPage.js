@@ -25,6 +25,15 @@ function JobDetailPage() {
     });
   };
 
+  const handleDescriptionClick = () => {
+    navigate('/job-description', {
+      state: {
+        jobId: selectedJob.jobId,
+        jobName: selectedJob.name,
+      },
+    });
+  };
+
   return (
     <div className="JobDetailPage">
       <div className="JobDetail-top">
@@ -39,7 +48,9 @@ function JobDetailPage() {
         <button className="JobDetailButton" onClick={handleLicenseClick}>
           자격증 추천
         </button>
-        <button className="JobDetailButton">직업 상세 설명</button>
+        <button className="JobDetailButton" onClick={handleDescriptionClick}>
+          직업 상세 설명
+        </button>
       </div>
     </div>
   );

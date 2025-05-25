@@ -13,6 +13,7 @@ import JobDetailPage from './pages/JobDetailPage'; // 직업 상세 화면
 import MajorSelectPage from './pages/MajorSelectPage';
 import MyPage from './pages/MyPage'; // 마이페이지 화면
 import LicenseRecommendPage from './pages/LicenseRecommendPage'; // 자격증 추천 화면
+import JobDescriptionPage from './pages/JobDescriptionPage'; // 직업 상세 설명 화면 
 import Header from './components/Header'; // 상단 헤더 컴포넌트
 
 import './App.css'; // 전체 앱 스타일 가져오기
@@ -71,6 +72,14 @@ function AppContent() {
           element={
             <div style={{ paddingTop: '70px' }}>
               <LicenseRecommendPage />
+            </div>
+          }
+        />
+        <Route
+          path="/job-description"
+          element={
+            <div style={{ paddingTop: '70px' }}>
+              <JobDescriptionPage />
             </div>
           }
         />

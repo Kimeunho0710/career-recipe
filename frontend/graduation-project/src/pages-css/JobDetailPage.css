@@ -12,10 +12,8 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 20px;
 }
 
-/* 선택된 직업명 박스 (길이 자동 조정) */
 .SelectedJob {
   background-color: #eaeaea;
   color: #333;
@@ -23,6 +21,7 @@
   padding: 10px 20px;
   justify-self: start;
   border-radius: 15px;
+  margin-bottom: 20px;
 }
   
 .ButtonList {
@@ -55,10 +54,6 @@
 @media (max-width: 600px) {
   .JobDetailPage {
     padding: 10px;
-  }
-
-  .JobDetail-top {
-    margin-bottom: 16px;
   }
 
   .SelectedJob {
