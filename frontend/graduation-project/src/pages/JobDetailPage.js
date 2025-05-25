@@ -18,7 +18,10 @@ function JobDetailPage() {
 
   const handleLicenseClick = () => {
     navigate('/license-recommend', {
-      state: { jobId: selectedJob.jobId },
+      state: {
+        jobId: selectedJob.jobId,
+        jobName: selectedJob.name,
+      },
     });
   };
 

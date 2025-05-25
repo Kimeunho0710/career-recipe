@@ -35,11 +35,11 @@ function MajorSelectPage() {
 
     const department = selectedDept === '전체' ? '' : selectedDept.replace(/학과|학부/, '');
     const grade = selectedGrade === '전체' ? '' : parseInt(selectedGrade.charAt(0));
-    const semesterId = selectedSemester === '전체' ? '' : parseInt(selectedSemester.charAt(0));
+    const semester_id = selectedSemester === '전체' ? '' : parseInt(selectedSemester.charAt(0));
 
     axios
       .get(`/api/jobs/${jobId}/subjects`, {
-        params: { department, grade, semesterId },
+        params: { department, grade, semester_id },
       })
       .then((res) => setSubjects(res.data))
       .catch((err) => console.error('전공 과목 추천 조회 실패:', err));

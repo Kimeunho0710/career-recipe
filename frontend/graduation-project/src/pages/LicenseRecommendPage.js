@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import '../pages-css/LicenseRecommendPage.css';
-import '../pages-css/JobDetailPage.css';
+import '../pages-css/JobDetailPage.css'; // JobDetail-top, SelectedJob 스타일 재사용
 
 function LicenseRecommendPage() {
   const location = useLocation();
@@ -13,6 +13,7 @@ function LicenseRecommendPage() {
   const imageUrl = `${process.env.PUBLIC_URL}/img/${cleanJobId}.png`;
 
   console.log("jobId:", jobId);
+  console.log("jobName:", jobName);
   console.log("imageUrl:", imageUrl);
 
   return (
