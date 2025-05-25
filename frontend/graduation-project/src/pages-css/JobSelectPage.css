@@ -70,5 +70,6 @@
     .JobSelect-button {
       font-size: 15px;
       padding: 12px;
+      width: 100%;
     }
   }
