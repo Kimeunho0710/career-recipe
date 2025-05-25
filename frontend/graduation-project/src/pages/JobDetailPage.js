@@ -20,7 +20,7 @@ function JobDetailPage() {
     navigate('/license-recommend', {
       state: {
         jobId: selectedJob.jobId,
-        jobName: selectedJob.name,
+        jobName: selectedJob.name, 
       },
     });
   };
