@@ -16,12 +16,11 @@
   
   .JobSelect-category {
     background-color: #8790CB;
-    color: white;
-    border: none;
-    justify-self: start;
-    padding: 8px 16px;
-    border-radius: 15px;
+    color: #fff;
     font-size: 16px;
+    padding: 10px 20px;
+    justify-self: start;
+    border-radius: 15px;
   }
   
   .JobSelect-list {
@@ -33,8 +32,10 @@
   }
   
   .JobSelect-button {
+    font-family: 'Jua', sans-serif;
     background-color: #E8E9F0;
-    font-size: 18px;
+    color: #333;
+    font-size: 20px;
     border: none;
     padding: 15px;
     border-radius: 15px;
@@ -45,7 +46,6 @@
   
   .JobSelect-button:hover {
     background-color: #BFC0CF;
-    font-weight: bold;
   }
   
   /* 폰 화면 사이즈 */
