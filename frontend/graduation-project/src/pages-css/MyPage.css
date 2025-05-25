@@ -1,64 +1,65 @@
 .MyPage {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .MyPage-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .Profile-section {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .Profile-photo {
-    width: 80px;
-    height: 80px;
-    background-color: #ddd;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 20px;
-  }
-  
-  .Profile-info div {
-    margin: 5px 0;
-    font-size: 16px;
-  }
-  
-  .Favorite-section {
-    margin-top: 30px;
-  }
-  
-  .Favorite-list {
-    list-style: none;
-    padding: 0;
-    max-height: 300px;
-    overflow-y: auto;
-  }
-  
-  .Favorite-list li {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 15px;
-    background: #f1f1f1;
-    border-radius: 8px;
-    margin: 8px 0;
-    align-items: center;
-  }
-  
-  .Star-icon {
-    margin-left: 10px;
-    font-size: 18px;
-  }
-  
-  .Scroll-info {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #999;
-  }
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ProfileCard {
+  display: flex;
+  justify-content: space-between;
+  padding : 16px 100px;
+  background-color: #dcdce6;
+  border-radius: 12px;
+}
+
+.ProfileValue {
+  font-size: 15px;
+}
+
+.ProfileImage {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.FavoriteCard {
+  background-color: #edeef4;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.FavoriteTitle {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.FavoriteList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.FavoriteItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.Star {
+  color: gold;
+}
+
+.NoFavorites {
+  font-size: 15px;
+  color: #777;
+}

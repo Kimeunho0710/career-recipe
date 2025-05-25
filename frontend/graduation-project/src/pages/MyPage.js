@@ -1,30 +1,44 @@
-import { useEffect, useState } from 'react'; // 리액트 훅 import
+import React from 'react';
 import '../pages-css/MyPage.css';
 
 function MyPage() {
-  const [favorites, setFavorites] = useState([]);
-  // 즐겨찾기 목록을 저장하는 state. 처음엔 빈 배열
+  // 카카오 로그인 정보 불러오기
+  const kakaoProfile = JSON.parse(localStorage.getItem('kakaoProfile')) || {
+    nickname: '로그인 필요',
+    profile_image: '/img/default-profile.png', // 대체 이미지
+  };
 
-  useEffect(() => {
-    // 컴포넌트가 처음 화면에 뜰 때 실행 (mount 시점)과목
-    const savedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    // localStorage에서 'favorites' 키로 저장된 값 가져오기 (없으면 빈 배열)
-    setFavorites(savedFavorites); // 가져온 데이터를 state에 저장
-  }, []);
+  // 즐겨찾기 과목 불러오기
+  const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
 
   return (
-    <div>
-      <h2>⭐ 즐겨찾기한 과목</h2>
-      <ul>
-        {favorites.map((subject, index) => (
-          <li key={index}>
-            {subject}
-            {/* 필요하면 여기에서 과목 삭제하는 버튼 추가할 수 있음 */}
-          </li>
-        ))}
-      </ul>
+    <div className="MyPage">
+      <div className="ProfileCard">
+        <img
+            src={kakaoProfile.profile_image}
+            alt="프로필"
+            className="ProfileImage"
+          />
+        <div className="ProfileValue">{kakaoProfile.nickname}</div>
+      </div>
+
+      <div className="FavoriteCard">
+        <div className="FavoriteTitle">⭐ 과목 즐겨찾기</div>
+        {favorites.length > 0 ? (
+          <ul className="FavoriteList">
+            {favorites.map((subject, index) => (
+              <li key={index} className="FavoriteItem">
+                {subject}
+                <span className="Star">⭐</span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="NoFavorites">즐겨찾기한 과목이 없습니다.</p>
+        )}
+      </div>
     </div>
   );
 }
 
-export default MyPage; // 컴포넌트 내보내기
+export default MyPage;
