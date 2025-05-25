@@ -18,3 +18,29 @@
   height: auto;
   border-radius: 8px;
 }
+
+/* 폰 화면 사이즈 */
+@media (max-width: 600px) {
+  .LicenseRecommendPage {
+    padding: 12px;
+  }
+
+  .LicenseCard {
+    padding: 16px;
+  }
+
+  .license-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+  }
+
+  .JobDetail-top {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .SelectedJob {
+    font-size: 15px;
+  }
+}
