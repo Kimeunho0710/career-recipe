@@ -12,6 +12,7 @@ import JobSelectPage from './pages/JobSelectPage'; // 직업 선택 화면
 import JobDetailPage from './pages/JobDetailPage'; // 직업 상세 화면
 import MajorSelectPage from './pages/MajorSelectPage';
 import MyPage from './pages/MyPage'; // 마이페이지 화면
+import RoadmapPage from './pages/RoadmapPage'; // 로드맵 화면 
 import LicenseRecommendPage from './pages/LicenseRecommendPage'; // 자격증 추천 화면
 import JobDescriptionPage from './pages/JobDescriptionPage'; // 직업 상세 설명 화면 
 import Header from './components/Header'; // 상단 헤더 컴포넌트
@@ -64,6 +65,14 @@ function AppContent() {
           element={
             <div style={{ paddingTop: '70px' }}>
               <MyPage />
+            </div>
+          }
+        />
+        <Route
+          path="/roadmap"
+          element={
+            <div style={{ paddingTop: '70px' }}>
+              <RoadmapPage />
             </div>
           }
         />

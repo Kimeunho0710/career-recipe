@@ -16,6 +16,15 @@ function JobDetailPage() {
     });
   };
 
+  const handleRoadmapClick = () => {
+    navigate('/roadmap', {
+      state: {
+        jobId: selectedJob.jobId,
+        jobName: selectedJob.name,
+      },
+    });
+  };
+
   const handleLicenseClick = () => {
     navigate('/license-recommend', {
       state: {
@@ -44,7 +53,7 @@ function JobDetailPage() {
         <button className="JobDetailButton" onClick={handleSubjectClick}>
           전공(선택) 추천
         </button>
-        <button className="JobDetailButton">로드맵</button>
+        <button className="JobDetailButton" onClick={handleRoadmapClick}>로드맵</button>
         <button className="JobDetailButton" onClick={handleLicenseClick}>
           자격증 추천
         </button>

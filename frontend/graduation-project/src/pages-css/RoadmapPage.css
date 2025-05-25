@@ -1,0 +1,39 @@
+.RoadmapPage {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.RoadmapCard {
+  background-color: #f4f4f8;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.roadmap-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* 반응형 */
+@media (max-width: 600px) {
+  .RoadmapPage {
+    padding: 12px;
+  }
+
+  .RoadmapCard {
+    padding: 16px;
+  }
+
+  .roadmap-image {
+    max-width: 100%;
+    height: auto;
+  }
+}
