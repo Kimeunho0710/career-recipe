@@ -1,6 +1,6 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import "./Header.css";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Header.css';
 
 function Header() {
   const navigate = useNavigate();
@@ -13,13 +13,17 @@ function Header() {
       </div>
 
       {/* 중앙: 로고 + 타이틀 */}
-      <div className="Header-center">
+      <div
+        className="Header-center"
+        onClick={() => navigate('/select-job')}
+        style={{ cursor: 'pointer' }}
+      >
         <img src="/logo.png" alt="로고" className="Header-logo" />
         <span className="Header-title">진로레시피</span>
       </div>
 
       {/* 오른쪽: 마이페이지 */}
-      <div className="Header-right" onClick={() => navigate("/mypage")}>
+      <div className="Header-right" onClick={() => navigate('/mypage')}>
         <img src="/myPage.png" alt="마이페이지" className="Header-icon" />
       </div>
     </div>
