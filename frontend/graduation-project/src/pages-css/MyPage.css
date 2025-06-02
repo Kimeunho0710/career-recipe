@@ -10,13 +10,26 @@
 .ProfileCard {
   display: flex;
   justify-content: space-between;
-  padding : 16px 100px;
-  background-color: #dcdce6;
+  padding: 16px 100px;
+  background-color: #bfc0cf;
   border-radius: 12px;
 }
 
 .ProfileValue {
   font-size: 15px;
+}
+
+.LogoutButton {
+  background-color: #bfc0cf;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-family: 'Jua', sans-serif;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 15px;
 }
 
 .ProfileImage {

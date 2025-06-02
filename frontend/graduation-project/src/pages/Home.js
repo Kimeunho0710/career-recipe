@@ -15,6 +15,8 @@ function Home() {
   // 로그인 버튼 클릭 시 호출될 함수
   const handleLogin = () => {
     window.Kakao.Auth.login({
+      throughTalk: false,
+      persistAccessToken: false, // ✅ 자동 로그인 방지: 매번 계정 선택
       success: function (authObj) {
         console.log('✅ 로그인 성공:', authObj);
 
