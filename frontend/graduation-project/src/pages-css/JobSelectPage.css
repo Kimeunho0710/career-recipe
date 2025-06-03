@@ -1,0 +1,75 @@
+.JobSelectPage {
+    max-width: 500px; /* 콘텐츠 최대 너비 */
+    margin: 0 auto; /* 화면 가운데 정렬 */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .JobSelect-top {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .JobSelect-category {
+    background-color: #8790CB;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    justify-self: start;
+    border-radius: 15px;
+  }
+  
+  .JobSelect-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding: 0 16px;
+  }
+  
+  .JobSelect-button {
+    font-family: 'Jua', sans-serif;
+    background-color: #E8E9F0;
+    color: #333;
+    font-size: 20px;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .JobSelect-button:hover {
+    background-color: #BFC0CF;
+  }
+  
+  /* 폰 화면 사이즈 */
+  @media (max-width: 600px) {
+    .JobSelectPage {
+      padding: 10px;
+    }
+  
+    .JobSelect-top {
+      margin-bottom: 16px;
+    }
+  
+    .JobSelect-category {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  
+    .JobSelect-list {
+      gap: 10px;
+    }
+  
+    .JobSelect-button {
+      font-size: 15px;
+      padding: 12px;
+      width: 100%;
+    }
+  }
