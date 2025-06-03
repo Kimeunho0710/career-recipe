@@ -11,6 +11,9 @@ import com.backend.careerecipe.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class FavoriteService {
@@ -33,5 +36,16 @@ public class FavoriteService {
 
     public void delete(Long userId, String subjectId, String department) {
         favoriteRepository.deleteByUserIdAndSubjectIdAndDepartment(userId, subjectId, department);
+    }
+
+    public List<FavoriteRequestDto> findByUserId(Long userId) {
+        List<Favorite> favorites = favoriteRepository.findByUser_Id(userId); // ✅ 여기 수정
+        return favorites.stream()
+                .map(fav -> new FavoriteRequestDto(
+                        fav.getUser().getId(),
+                        fav.getSubject().getSubject_id().getSubjectId(),
+                        fav.getSubject().getSubject_id().getDepartment()
+                ))
+                .collect(Collectors.toList());
     }
 }

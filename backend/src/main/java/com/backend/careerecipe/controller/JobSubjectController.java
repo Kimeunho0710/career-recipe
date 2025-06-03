@@ -23,4 +23,5 @@ public class JobSubjectController {
     ) {
         return jobSubjectService.getRecommendedSubjects(job_id, department, grade, semester_id);
     }
+
 }

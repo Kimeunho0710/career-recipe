@@ -7,8 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import jakarta.transaction.Transactional;
 
+import java.util.List;
+
 public interface FavoriteRepository extends JpaRepository<Favorite, Long> {
 
+    // 즐겨찾기 삭제 (커스텀 쿼리)
     @Modifying
     @Transactional
     @Query("DELETE FROM Favorite f WHERE f.user.id = :userId AND f.subject.subject_id.subjectId = :subjectId AND f.subject.subject_id.department = :department")
@@ -17,4 +20,7 @@ public interface FavoriteRepository extends JpaRepository<Favorite, Long> {
             @Param("subjectId") String subjectId,
             @Param("department") String department
     );
+
+    // ✅ 즐겨찾기 목록 조회 (수정됨)
+    List<Favorite> findByUser_Id(Long userId);
 }

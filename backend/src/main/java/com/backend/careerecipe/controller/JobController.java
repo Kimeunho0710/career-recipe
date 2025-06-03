@@ -2,8 +2,10 @@ package com.backend.careerecipe.controller;
 
 import com.backend.careerecipe.dto.JobDetailResponseDto;
 import com.backend.careerecipe.dto.RoadMapResponseDto;
+import com.backend.careerecipe.dto.SubjectDto;
 import com.backend.careerecipe.dto.SubjectResponseDto;
 import com.backend.careerecipe.entity.Job;
+import com.backend.careerecipe.repository.Job_subject_mappingRepository;
 import com.backend.careerecipe.service.JobService;
 import com.backend.careerecipe.service.JobSubjectService;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +22,7 @@ public class JobController {
 
     private final JobService jobService;
     private final JobSubjectService jobSubjectService;
+    private final Job_subject_mappingRepository jobSubjectMappingRepository;
     @GetMapping
     public List<Job> getAllJobs() {
         return jobService.getAllJobs();
@@ -34,4 +37,14 @@ public class JobController {
     public ResponseEntity<JobDetailResponseDto> getJobDetail(@PathVariable String jobId) {
         return ResponseEntity.ok(jobService.getJobDetail(jobId));
     }
+    @GetMapping("/api/jobs/{jobId}/subjects")
+    public List<SubjectDto> getRecommendedSubjects(
+            @PathVariable String jobId,
+            @RequestParam(required = false) String department,
+            @RequestParam(required = false) Integer grade,
+            @RequestParam(required = false) Integer semester_id
+    ) {
+        return jobSubjectMappingRepository.findSubjectsWithInfo(jobId, department, grade, semester_id);
+    }
+
 }
