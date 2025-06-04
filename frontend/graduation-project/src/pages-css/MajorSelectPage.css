@@ -1,0 +1,119 @@
+.MajorSelectPage {
+  max-width: 500px; /* 콘텐츠 최대 너비 */
+  margin: 0 auto; /* 화면 가운데 정렬 */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Jua', sans-serif;
+}
+
+.FilterBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.FilterDropdown {
+  flex: 1;
+  position: relative;
+}
+
+.FilterButton {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  font-family: 'Jua', sans-serif;
+  background-color: #8790cb;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.FilterButton:hover {
+  background-color: #3f4279;
+}
+
+.Dropdown {
+  position: absolute;
+  top: 110%; /* 버튼 아래에 위치 */
+  left: 0;
+  background-color: #8790cb;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 160px;
+  padding: 8px 0;
+}
+
+.DropdownItem {
+  font-family: 'Jua', sans-serif;
+  padding: 10px 16px;
+  cursor: pointer;
+  color: white;
+}
+
+.DropdownItem:active {
+  background-color: #3f4279;
+}
+
+.SubjectList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.SubjectItem {
+  background-color: #eaebf3;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.SubjectInfo {
+  font-size: 16px;
+}
+
+.StarImage {
+  width: 20px;
+  height: 20px;
+}
+
+/* 폰 화면 사이즈 */
+@media (max-width: 600px) {
+  .MajorSelectPage {
+    padding: 10px;
+  }
+
+  .FilterButton {
+    font-size: 14px;
+    padding: 8px;
+    margin: 0 3px;
+  }
+
+  .SubjectItem {
+    padding: 12px;
+  }
+
+  .SubjectInfo {
+    font-size: 14px;
+  }
+
+  .StarImage {
+    width: 18px;
+    height: 18px;
+  }
+}

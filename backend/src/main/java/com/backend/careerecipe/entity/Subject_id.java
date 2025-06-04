@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Subject_id implements Serializable {
 
     @Column(name = "subject_id", length = 10, nullable = false)
-    private String subject_id;
+    private String subjectId;
 
     @Column(name = "department", length = 100, nullable = false)
     private String department;

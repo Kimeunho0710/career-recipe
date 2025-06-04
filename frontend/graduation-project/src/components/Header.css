@@ -1,0 +1,86 @@
+/* ===== 상단 고정 Header 전체 영역 ===== */
+.Header {
+  position: fixed; /* 화면에 고정 */
+  top: 0; /* 화면 최상단에 위치 */
+  width: 100%;
+  max-width: 500px; 
+  left: 50%;  /* 화면 중앙에 위치 */
+  transform: translateX(-50%); /* 화면 중앙에 위치 */
+  height: 60px; /* 헤더 높이 60px */
+  background-color: #ffffff; /* 배경색 흰색 */
+  display: flex; /* Flexbox 사용 */
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: space-between; /* 좌측 - 가운데 - 우측 요소를 양끝 + 중앙 배치 */
+  padding: 0 20px; /* 좌우 20px 여백 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 아래쪽에 부드러운 그림자 */
+  z-index: 1000; /* 다른 요소들보다 위에 뜨게 */
+}
+
+/* ===== 왼쪽/오른쪽 아이콘 영역 ===== */
+.Header-left, .Header-right {
+  width: 50px; /* 고정 너비 */
+  height: 50px; /* 고정 높이 */
+  display: flex; /* Flexbox */
+  align-items: center; /* 수직 가운데 */
+  justify-content: center; /* 수평 가운데 */
+  cursor: pointer; /* 마우스 올리면 손가락 모양 */
+}
+
+/* ===== 중앙 (로고 + 타이틀) 영역 ===== */
+.Header-center {
+  display: flex; /* 로고 + 글자를 가로로 나란히 배치 */
+  align-items: center; /* 수직 중앙 정렬 */
+  gap: 10px; /* 로고와 텍스트 사이 간격 10px */
+}
+
+/* ===== 헤더 안의 로고 이미지 크기 ===== */
+.Header-logo {
+  width: 30px;
+  height: 30px;
+}
+
+/* ===== 헤더 안의 타이틀 글자 스타일 ===== */
+.Header-title {
+  font-size: 22px; /* 글자 크기 */
+  font-weight: bold; /* 굵게 */
+  color: #333; /* 어두운 회색 글자 */
+}
+
+/* ===== 뒤로가기, 마이페이지 아이콘 스타일 ===== */
+.Header-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Home 전용 스타일 고려 */
+.HomePage {
+  padding-top: 70px; /* 헤더 높이만큼 위 여백 확보 */
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .Header {
+    max-width: 100%;
+    padding: 0 16px; /* 좌우 여백은 조금만 */
+    box-sizing: border-box;
+  }
+
+  .Header-logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .Header-title {
+    font-size: 18px; /* 기존보다 작게 */
+  }
+
+  .Header-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .Header-left, .Header-right {
+    width: 40px;
+    height: 40px;
+  }
+}
