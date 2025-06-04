@@ -44,7 +44,8 @@ public class FavoriteService {
                 .map(fav -> new FavoriteRequestDto(
                         fav.getUser().getId(),
                         fav.getSubject().getSubject_id().getSubjectId(),
-                        fav.getSubject().getSubject_id().getDepartment()
+                        fav.getSubject().getSubject_id().getDepartment(),
+                        fav.getSubject().getSubject_name()
                 ))
                 .collect(Collectors.toList());
     }

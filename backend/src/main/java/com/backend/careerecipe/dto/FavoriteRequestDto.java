@@ -10,4 +10,5 @@ public class FavoriteRequestDto {
     private Long userId;
     private String subjectId;
     private String department;
+    private String subject_name;
 }
