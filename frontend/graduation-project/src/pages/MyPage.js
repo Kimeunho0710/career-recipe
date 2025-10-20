@@ -7,10 +7,13 @@ function MyPage() {
     const navigate = useNavigate();
     const [favorites, setFavorites] = useState([]);
 
-    const kakaoProfile = JSON.parse(localStorage.getItem('kakaoProfile')) || {
-        nickname: '로그인 필요',
+    // ✅ userInfo에서 닉네임 가져오도록 변경
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    const kakaoProfile = {
+        nickname: userInfo?.nickname || '로그인 필요',
         profile_image: '/img/default-profile.png',
     };
+
 
     useEffect(() => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
@@ -19,7 +22,7 @@ function MyPage() {
         const fetchFavorites = async () => {
             try {
                 const res = await axios.get(`/api/favorites/${userInfo.userId}`);
-                setFavorites(res.data); // subjectName 포함되어야 함
+                setFavorites(res.data);
             } catch (err) {
                 console.error('❌ 즐겨찾기 목록 불러오기 실패:', err);
             }
@@ -27,6 +30,37 @@ function MyPage() {
 
         fetchFavorites();
     }, []);
+
+    // ✅ 즐겨찾기 삭제 함수
+    const handleRemoveFavorite = async (subject) => {
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        if (!userInfo) return;
+
+        try {
+            await axios.delete(`/api/favorites`, {
+                data: {
+                    userId: userInfo.userId,
+                    subjectId: subject.subjectId,
+                    department: subject.department,
+                },
+            });
+
+            // 프론트에서 즉시 반영
+            setFavorites((prev) =>
+                prev.filter(
+                    (item) =>
+                        !(
+                            item.subjectId === subject.subjectId &&
+                            item.department === subject.department
+                        )
+                )
+            );
+
+            console.log('✅ 즐겨찾기 삭제 성공');
+        } catch (err) {
+            console.error('❌ 즐겨찾기 삭제 실패:', err.response?.data || err.message);
+        }
+    };
 
     const handleLogout = async () => {
         try {
@@ -65,8 +99,15 @@ function MyPage() {
                     <ul className="FavoriteList">
                         {favorites.map((subject, index) => (
                             <li key={index} className="FavoriteItem">
-                                {subject.subject_name} ({subject.subjectId} / {subject.department})
-                                <span className="Star">⭐</span>
+                                <span>
+                                    {subject.subject_name} ({subject.department})
+                                </span>
+                                <button
+                                    className="RemoveButton"
+                                    onClick={() => handleRemoveFavorite(subject)}
+                                >
+                                    ❌ 해제
+                                </button>
                             </li>
                         ))}
                     </ul>

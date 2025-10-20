@@ -76,3 +76,16 @@
   font-size: 15px;
   color: #777;
 }
+.RemoveButton {
+  background-color: transparent;
+  border: none;
+  color: #ff4d4f;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: color 0.2s ease;
+}
+
+.RemoveButton:hover {
+  color: #d9363e;
+}

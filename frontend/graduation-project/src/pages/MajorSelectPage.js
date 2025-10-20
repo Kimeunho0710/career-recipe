@@ -50,7 +50,7 @@ function MajorSelectPage() {
             res.data.forEach((fav) => {
                 subjectList.forEach((subject, idx) => {
                     if (
-                        subject.subjectId === fav.subjectId &&
+                        subject.subject_id === fav.subjectId &&
                         subject.department === fav.department
                     ) {
                         favSet[idx] = true;
