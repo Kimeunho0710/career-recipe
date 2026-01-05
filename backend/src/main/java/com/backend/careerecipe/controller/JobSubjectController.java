@@ -17,10 +17,11 @@ public class JobSubjectController {
     @GetMapping("/{job_id}/subjects")
     public List<SubjectResponseDto> getRecommendedSubjects(
             @PathVariable String job_id,
-            @RequestParam String department,
-            @RequestParam int grade,
-            @RequestParam int semester_id
+            @RequestParam(required = false) String department,
+            @RequestParam(required = false) Integer grade,
+            @RequestParam(required = false) Integer semester_id
     ) {
         return jobSubjectService.getRecommendedSubjects(job_id, department, grade, semester_id);
     }
+
 }

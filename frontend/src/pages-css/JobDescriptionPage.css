@@ -1,0 +1,39 @@
+.JobDescriptionPage {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.DescriptionCard {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #edeef4;
+  border-radius: 12px;
+  padding: 20px 20px 0 20px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.sub-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .JobDescriptionPage {
+    padding: 12px;
+  }
+
+  .DescriptionCard {
+    padding: 16px 16px 0 16px;
+    font-size: 15px;
+  }
+
+  .sub-title {
+    font-size: 17px;
+  }
+}

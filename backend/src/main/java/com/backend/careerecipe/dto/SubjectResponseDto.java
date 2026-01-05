@@ -7,6 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class SubjectResponseDto {
     private String subject_id;
+    private String department;
     private String subject_name;
     private Integer credit;
 

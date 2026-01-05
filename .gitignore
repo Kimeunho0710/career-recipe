@@ -1,0 +1,13 @@
+# ===== IDE =====
+.idea/
+**/.vs/
+**/.vscode/
+
+# ===== Backend (Gradle) =====
+**/build/
+**/.gradle/
+
+# ===== Frontend =====
+frontend/node_modules/
+frontend/.env
+frontend/.env.*
