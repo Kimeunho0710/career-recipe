@@ -1,11 +1,13 @@
-node_modules/
+# ===== IDE =====
+.idea/
+**/.vs/
+**/.vscode/
 
-# 프론트엔드 관련 무시 항목
+# ===== Backend (Gradle) =====
+**/build/
+**/.gradle/
+
+# ===== Frontend =====
 frontend/node_modules/
-frontend/.vscode/
-frontend/public/
-frontend/src/
-frontend/package.json
-
-# 환경 설정 및 기타 무시
-.env
+frontend/.env
+frontend/.env.*
